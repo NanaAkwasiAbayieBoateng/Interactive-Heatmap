@@ -1,0 +1,38 @@
+---
+title: "Interactive Heatmap Plot of mtcars data in R"
+output: html_notebook
+---
+
+
+
+```{r}
+library(d3heatmap)
+
+d3heatmap(mtcars, scale = "column")
+```
+
+
+
+Remove the dendograms this way:
+```{r}
+d3heatmap(mtcars, scale = "column", dendrogram = "none",
+          color = "Blues")
+```
+
+
+
+
+```{r}
+d3heatmap(mtcars, scale = "column", dendrogram = "none",
+          color = scales::col_quantile("Blues", NULL, 5))
+```
+
+
+
+
+```{r}
+
+d3heatmap(mtcars, colors = "Blues", scale = "col",
+          dendrogram = "row", k_row = 3)
+```
+
